@@ -484,6 +484,14 @@ class RtsV3Handler {
   // <!-- API Promises
   //
 
+  doCancelPair(){
+    self.send(
+      Rts.RtsConnection_3.NewRtsConnection_3WithRtsCancelPairing(
+        new Rts.RtsCancelPairing()
+      )
+    );
+  }
+
   doWifiScan() {
     let self = this;
     let p = new Promise(function (resolve, reject) {
