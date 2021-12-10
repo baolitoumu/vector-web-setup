@@ -465,6 +465,19 @@ class RtsV2Handler {
   //
   // <!-- API Promises
   //
+  doCancelPair(){
+    let self = this;
+    let p = new Promise(function (resolve, reject) {
+  
+      self.send(
+        Rts.RtsConnection_2.NewRtsConnection_2WithRtsCancelPairing(
+          new Rts.RtsCancelPairing()
+        )
+      );
+    });
+
+
+  }
 
   doWifiScan() {
     let self = this;
